@@ -1,0 +1,31 @@
+
+<form action="<?php echo $GLOBALS['project_index']; ?>/controller/insert_user.php" method="POST">
+
+	<label>Tipo de Conta</label>
+	<select name="profile" class="form-control" id="">
+		<option value=""> -- Selecione -- </option>
+
+		<?php
+			foreach ($profiles as $key => $value) {
+				echo '<option value="',$value['id_profile'],'">',$value['profile_name'],'</option>';
+			}
+		?>
+	</select><br>
+
+	
+	<label>Nome</label>
+	<input type="text" required name="name" class="form-control" placeholder="Digite o nome do usuário"><br>
+
+	<label>Email</label>
+	<input type="email" required name="email" class="form-control" placeholder="Digite o email do usuário"><br>
+
+	<label>Senha</label>
+	<input type="password" name="password" class="form-control" placeholder="Digite a senha do usuário"><br>
+
+
+	<button class="btn btn-primary btn-lg btn-block">
+		<span class="glyphicon glyphicon-ok-sign"></span> 
+		Confirmar!
+	</button>
+
+</form>

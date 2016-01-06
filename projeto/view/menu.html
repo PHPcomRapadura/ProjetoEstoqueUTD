@@ -1,0 +1,23 @@
+<?php
+if(isset($user)){
+	if($user->profile_page == "admin"){
+		echo '<ul class="nav nav-pills nav-stacked">';
+			echo '<li><a href="',$GLOBALS['project_index'],'">';
+			echo '<span class="glyphicon glyphicon-home">  </span>';
+			echo ' Home</a></li>';
+
+			echo '<li><a href="?option=list_users">';
+			echo '<span class="glyphicon glyphicon-user">  </span>';
+			echo ' Usuários</a></li>';
+
+			echo '<li><a href="?option=list_categories">';
+			echo '<span class="glyphicon glyphicon-tags">  </span>';
+			echo ' Categorias</a></li>';
+
+			echo '<li><a href="?option=list_products">';
+			echo '<span class="glyphicon glyphicon-shopping-cart"></span>';
+			echo ' Produtos</a></li>';
+		echo '</ul>';	
+	}
+}
+?>

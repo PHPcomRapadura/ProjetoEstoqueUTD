@@ -1,0 +1,36 @@
+<table class="table" style="width: 50%;">
+	<tr>
+		<th>Tipo de Conta</th>
+		<td><?php echo $user->profile_name; ?></td>
+	</tr>
+
+	<tr>
+		<th>Data de Cadastro</th>
+		<td><?php echo date("d/m/Y H:i:s", $user->user_created_in); ?></td>
+	</tr>
+
+	<tr>
+		<th>Último Acesso</th>
+		<td><?php echo date("d/m/Y H:i:s", strtotime($user->user_last_access)); ?></td>
+	</tr>
+</table>
+
+
+<form action="<?php echo $GLOBALS['project_index']; ?>/controller/update_user.php" method="POST">
+
+	<label>Nome</label>
+	<input type="text" required name="name" value="<?php echo $user->user_name; ?>" class="form-control" placeholder="Digite o nome do usuário"><br>
+
+	<label>Email</label>
+	<input type="email" required name="email" value="<?php echo $user->user_email; ?>" class="form-control" placeholder="Digite o email do usuário"><br>
+
+	<label>Senha</label>
+	<input type="password" name="password" class="form-control" placeholder="Digite a senha do usuário"><br>
+
+
+	<button class="btn btn-primary btn-lg btn-block">
+		<span class="glyphicon glyphicon-ok-sign"></span> 
+		Confirmar!
+	</button>
+
+</form>

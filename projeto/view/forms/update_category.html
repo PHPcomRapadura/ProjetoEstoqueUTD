@@ -1,0 +1,19 @@
+
+<form action="<?php echo $GLOBALS['project_index']; ?>/controller/update_category.php" method="POST">
+<legend>Categoria de Produtos</legend>
+
+	<input type="hidden" name="filter" value="<?php echo $_GET['filter']; ?>">
+	<label>Nome da Categoria</label>
+	<input type="text" name="name" value="<?php echo $category['category_name']; ?>" class="form-control" placeholder="Digite o nome do produto"><br>
+
+	<label>Descrição</label>
+	<textarea name="desc" class="form-control" placeholder="Digite a descrição da cateoria"><?php echo $category['category_desc']; ?></textarea><br>
+
+	
+
+	<button class="btn btn-primary btn-lg btn-block">
+		<span class="glyphicon glyphicon-ok-sign"></span> 
+		Atualizar!
+	</button>
+
+</form>

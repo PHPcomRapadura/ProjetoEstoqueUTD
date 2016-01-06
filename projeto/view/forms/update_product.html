@@ -1,0 +1,34 @@
+<form action="<?php echo $GLOBALS['project_index'];?>/controller/update_product.php" method="POST">
+	<label>Categoria</label>
+	<select name="category" class="form-control">
+		<?php
+			echo '<option selected value="',$product['id_category'],'">',$product['category_name'],'</option>';
+			foreach ($categories as $key => $value) {
+				echo '<option value="',$value['id_category'],'">';
+					echo $value['category_name'];
+				echo '</option>';
+			}
+		?>
+	</select><br>
+
+	<input type="hidden" name="filter" value="<?php echo $_GET['filter']; ?>">
+	<label>Nome</label>
+	<input type="text" name="name" value="<?php echo $product['product_name']; ?>" placeholder="Nome do Produto" class="form-control"><br>
+
+	<label>Detalhes</label>
+	<textarea class="form-control" name="details" placeholder=
+	"Detalhes do Produto"><?php echo $product['product_details']; ?></textarea>
+	<br>
+
+	<label>Preço</label>
+	<input type="text" name="price" value="<?php echo $product['product_price']; ?>" placeholder="Preço do Produto" class="form-control"><br>
+
+	<label>Quantidade</label>
+	<input type="text" class="form-control" value="<?php echo $product['product_quantity']; ?>" name="quantity" placeholder="Quantidade do Produto">
+	<br>
+
+	<button class="btn btn-primary btn-block btn-lg">
+		<span class="glyphicon glyphicon-ok-sign"></span>
+		 Atualizar
+	</button>
+</form>

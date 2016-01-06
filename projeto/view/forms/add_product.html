@@ -1,0 +1,33 @@
+<form action="<?php echo $GLOBALS['project_index'];?>/controller/insert_product.php" method="POST">
+	<label>Categoria</label>
+	<select name="category" class="form-control">
+		<option> -- Selecione -- </option>
+		<?php
+			foreach ($categories as $key => $value) {
+				echo '<option value="',$value['id_category'],'">';
+					echo $value['category_name'];
+				echo '</option>';
+			}
+		?>
+	</select><br>
+
+	<label>Nome</label>
+	<input type="text" name="name" placeholder="Nome do Produto" class="form-control"><br>
+
+	<label>Detalhes</label>
+	<textarea class="form-control" name="details" placeholder=
+	"Detalhes do Produto"></textarea>
+	<br>
+
+	<label>Preço</label>
+	<input type="text" name="price" placeholder="Preço do Produto" class="form-control"><br>
+
+	<label>Quantidade</label>
+	<input type="text" class="form-control" name="quantity" placeholder="Quantidade do Produto">
+	<br>
+
+	<button class="btn btn-primary btn-block btn-lg">
+		<span class="glyphicon glyphicon-ok-sign"></span>
+		 Inserir
+	</button>
+</form>
